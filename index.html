@@ -7,7 +7,7 @@
           for Zero-Shot Motion Transfer">
     <meta name="keywords" content="ConMo, motion transfer, motion disentanglement, zero-shot, CVPR 2025">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>ConMo CVPR2025</title>
+    <title>ConMo</title>
   
     
     <!-- Fonts -->
@@ -116,14 +116,14 @@
                   </a>
               </span>
               <!-- Dataset Link. -->
-              <span class="link-block">
+              <!-- <span class="link-block">
                 <a href="https://pan.baidu.com/share/init?surl=aJbpDKdzQuYGekmELnISqw"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="far fa-images"></i>
                   </span>
                   <span>Data</span>
-                  </a>
+                  </a> -->
             </div>
 
           </div>
@@ -201,25 +201,30 @@
           <h3 class="title is-4">Multi-Subject</h3>
 
           <!-- item video -->
-          <!-- <div class="content has-text-justified">
+          <div class="content has-text-justified">
             <p style="font-family: 'Pacifico', cursive; font-size: 1.4em; text-align: center; color: #28e752;">
-              Orignal Prompt: a man is dancing
+              Orignal Prompt: Two race cars are driving down a street
             </p>
-
             <p style="font-family: 'Pacifico', cursive; font-size: 1.4em; text-align: center; color: #198de5;">
-              Target Prompt: a man is dancing on Mars in astronaut suit
+              Target Prompt: Two SUVs are driving down a street
             </p>
-          </div> -->
-
+          </div>
           <div class="columns is-mobile is-multiline is-centered">
-            <div class="column is-half has-text-centered">
+            <div class="column is-one-third has-text-centered">
               <p style="font-weight: bold; margin-bottom: 0.5em;">Original</p>
               <video controls muted preload playsinline style="width: 100%; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
                 <source src="./static/videos/multi-subject/ActionAuto/original.mp4" type="video/mp4">
               </video>
             </div>
-
-            <div class="column is-half has-text-centered">
+          
+            <div class="column is-one-third has-text-centered">
+              <p style="font-weight: bold; margin-bottom: 0.5em;">DMT</p>
+              <video controls muted preload playsinline style="width: 100%; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
+                <source src="./static/videos/multi-subject/ActionAuto/edited_dmt.mp4" type="video/mp4">
+              </video>
+            </div>
+          
+            <div class="column is-one-third has-text-centered">
               <p style="font-weight: bold; margin-bottom: 0.5em;">ConMo</p>
               <video controls muted preload playsinline style="width: 100%; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
                 <source src="./static/videos/multi-subject/ActionAuto/edited_ours.mp4" type="video/mp4">
@@ -229,15 +234,30 @@
           <!-- /item video -->
 
           <!-- item video -->
+          <div class="content has-text-justified">
+            <p style="font-family: 'Pacifico', cursive; font-size: 1.4em; text-align: center; color: #28e752;">
+              Orignal Prompt: Two people are running down a street
+            </p>
+            <p style="font-family: 'Pacifico', cursive; font-size: 1.4em; text-align: center; color: #198de5;">
+              Target Prompt: Two robots are running down a street
+            </p>
+          </div>
           <div class="columns is-mobile is-multiline is-centered">
-            <div class="column is-half has-text-centered">
+            <div class="column is-one-third has-text-centered">
               <p style="font-weight: bold; margin-bottom: 0.5em;">Original</p>
               <video controls muted preload playsinline style="width: 100%; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
                 <source src="./static/videos/multi-subject/CoupleRunner/original.mp4" type="video/mp4">
               </video>
             </div>
 
-            <div class="column is-half has-text-centered">
+            <div class="column is-one-third has-text-centered">
+              <p style="font-weight: bold; margin-bottom: 0.5em;">DMT</p>
+              <video controls muted preload playsinline style="width: 100%; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
+                <source src="./static/videos/multi-subject/CoupleRunner/edited_dmt.mp4" type="video/mp4">
+              </video>
+            </div>
+
+            <div class="column is-one-third has-text-centered">
               <p style="font-weight: bold; margin-bottom: 0.5em;">ConMo</p>
               <video controls muted preload playsinline style="width: 100%; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
                 <source src="./static/videos/multi-subject/CoupleRunner/edited_ours.mp4" type="video/mp4">
@@ -249,15 +269,29 @@
           <h3 class="title is-4">Fine-Grained </h3>
 
           <!-- item video -->
+          <div class="content has-text-justified">
+            <p style="font-family: 'Pacifico', cursive; font-size: 1.4em; text-align: center; color: #28e752;">
+              Orignal Prompt: A woman is walking in the park
+            </p>
+            <p style="font-family: 'Pacifico', cursive; font-size: 1.4em; text-align: center; color: #198de5;">
+              Target Prompt: A boy is walking in the park
+          </div>
           <div class="columns is-mobile is-multiline is-centered">
-            <div class="column is-half has-text-centered">
+            <div class="column is-one-third has-text-centered">
               <p style="font-weight: bold; margin-bottom: 0.5em;">Original</p>
               <video controls muted preload playsinline style="width: 100%; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
                 <source src="./static/videos/fine-grained/lucia/original.mp4" type="video/mp4">
               </video>
             </div>
 
-            <div class="column is-half has-text-centered">
+            <div class="column is-one-third has-text-centered">
+              <p style="font-weight: bold; margin-bottom: 0.5em;">DMT</p>
+              <video controls muted preload playsinline style="width: 100%; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
+                <source src="./static/videos/fine-grained/lucia/edited_dmt.mp4" type="video/mp4">
+              </video>
+            </div>
+
+            <div class="column is-one-third has-text-centered">
               <p style="font-weight: bold; margin-bottom: 0.5em;">ConMo</p>
               <video controls muted preload playsinline style="width: 100%; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
                 <source src="./static/videos/fine-grained/lucia/edited_ours.mp4" type="video/mp4">
@@ -267,15 +301,29 @@
           <!-- /item video -->
 
           <!-- item video -->
+          <div class="content has-text-justified">
+            <p style="font-family: 'Pacifico', cursive; font-size: 1.4em; text-align: center; color: #28e752;">
+              Orignal Prompt: A mallard is running on the grass
+            </p>
+            <p style="font-family: 'Pacifico', cursive; font-size: 1.4em; text-align: center; color: #198de5;">
+              Target Prompt: A swan is running on the grass
+          </div>
           <div class="columns is-mobile is-multiline is-centered">
-            <div class="column is-half has-text-centered">
+            <div class="column is-one-third has-text-centered">
               <p style="font-weight: bold; margin-bottom: 0.5em;">Original</p>
               <video controls muted preload playsinline style="width: 100%; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
                 <source src="./static/videos/fine-grained/mallard-fly/original.mp4" type="video/mp4">
               </video>
             </div>
 
-            <div class="column is-half has-text-centered">
+            <div class="column is-one-third has-text-centered">
+              <p style="font-weight: bold; margin-bottom: 0.5em;">DMT</p>
+              <video controls muted preload playsinline style="width: 100%; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
+                <source src="./static/videos/fine-grained/mallard-fly/edited_dmt.mp4" type="video/mp4">
+              </video>
+            </div>
+
+            <div class="column is-one-third has-text-centered">
               <p style="font-weight: bold; margin-bottom: 0.5em;">ConMo</p>
               <video controls muted preload playsinline style="width: 100%; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
                 <source src="./static/videos/fine-grained/mallard-fly/edited_ours.mp4" type="video/mp4">
@@ -283,20 +331,35 @@
             </div>
           </div>
           <!-- /item video -->
-
+         
 
           <h3 class="title is-4">Drastic Shape Difference </h3>
 
           <!-- item video -->
+          <div class="content has-text-justified">
+            <p style="font-family: 'Pacifico', cursive; font-size: 1.4em; text-align: center; color: #28e752;">
+              Orignal Prompt: A plane is flying in the sky
+            </p>
+            <p style="font-family: 'Pacifico', cursive; font-size: 1.4em; text-align: center; color: #198de5;">
+              Target Prompt: A air balloon is flying in the sky
+            </p>
+          </div>
           <div class="columns is-mobile is-multiline is-centered">
-            <div class="column is-half has-text-centered">
+            <div class="column is-one-third has-text-centered">
               <p style="font-weight: bold; margin-bottom: 0.5em;">Original</p>
               <video controls muted preload playsinline style="width: 100%; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
                 <source src="./static/videos/drastic shape difference/airbus/original.mp4" type="video/mp4">
               </video>
             </div>
 
-            <div class="column is-half has-text-centered">
+            <div class="column is-one-third has-text-centered">
+              <p style="font-weight: bold; margin-bottom: 0.5em;">DMT</p>
+              <video controls muted preload playsinline style="width: 100%; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
+                <source src="./static/videos/drastic shape difference/airbus/edited_dmt.mp4" type="video/mp4">
+              </video>
+            </div>
+
+            <div class="column is-one-third has-text-centered">
               <p style="font-weight: bold; margin-bottom: 0.5em;">ConMo</p>
               <video controls muted preload playsinline style="width: 100%; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
                 <source src="./static/videos/drastic shape difference/airbus/edited_ours.mp4" type="video/mp4">
@@ -306,15 +369,30 @@
           <!-- /item video -->
 
           <!-- item video -->
+          <div class="content has-text-justified">
+            <p style="font-family: 'Pacifico', cursive; font-size: 1.4em; text-align: center; color: #28e752;">
+              Orignal Prompt: A locomotive is moving through the jungle
+            </p>
+            <p style="font-family: 'Pacifico', cursive; font-size: 1.4em; text-align: center; color: #198de5;">
+              Target Prompt: A man riding bike is moving through the jungle
+            </p>
+          </div>
           <div class="columns is-mobile is-multiline is-centered">
-            <div class="column is-half has-text-centered">
+            <div class="column is-one-third has-text-centered">
               <p style="font-weight: bold; margin-bottom: 0.5em;">Original</p>
               <video controls muted preload playsinline style="width: 100%; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
                 <source src="./static/videos/drastic shape difference/locomotive/original.mp4" type="video/mp4">
               </video>
             </div>
 
-            <div class="column is-half has-text-centered">
+            <div class="column is-one-third has-text-centered">
+              <p style="font-weight: bold; margin-bottom: 0.5em;">DMT</p>
+              <video controls muted preload playsinline style="width: 100%; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
+                <source src="./static/videos/drastic shape difference/locomotive/edited_dmt.mp4" type="video/mp4">
+              </video>
+            </div>
+
+            <div class="column is-one-third has-text-centered">
               <p style="font-weight: bold; margin-bottom: 0.5em;">ConMo</p>
               <video controls muted preload playsinline style="width: 100%; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
                 <source src="./static/videos/drastic shape difference/locomotive/edited_ours.mp4" type="video/mp4">
@@ -323,9 +401,17 @@
           </div>
           <!-- /item video -->
 
-          <h3 class="title is-4">Applications: cameramotion、reposition、motion-extraction、resize</h3>
+          <h3 class="title is-4">Applications: cameramotion、motion-extraction、resize</h3>
 
           <!-- item video -->
+          <div class="content has-text-justified">
+            <p style="font-family: 'Pacifico', cursive; font-size: 1.4em; text-align: center; color: #28e752;">
+              Orignal Prompt: A car is turning
+            </p>
+            <p style="font-family: 'Pacifico', cursive; font-size: 1.4em; text-align: center; color: #198de5;">
+              Target Prompt: City at night from overlook view
+            </p>
+          </div>
           <div class="columns is-mobile is-multiline is-centered">
             <div class="column is-half has-text-centered">
               <p style="font-weight: bold; margin-bottom: 0.5em;">Original</p>
@@ -344,24 +430,14 @@
           <!-- /item video -->
 
           <!-- item video -->
-          <div class="columns is-mobile is-multiline is-centered">
-            <div class="column is-half has-text-centered">
-              <p style="font-weight: bold; margin-bottom: 0.5em;">Original</p>
-              <video controls muted preload playsinline style="width: 100%; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
-                <source src="./static/videos/application/reposition/multi/original.mp4" type="video/mp4">
-              </video>
-            </div>
-
-            <div class="column is-half has-text-centered">
-              <p style="font-weight: bold; margin-bottom: 0.5em;">ConMo</p>
-              <video controls muted preload playsinline style="width: 100%; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
-                <source src="./static/videos/application/reposition/multi/reposition_ours.mp4" type="video/mp4">
-              </video>
-            </div>
+          <div class="content has-text-justified">
+            <p style="font-family: 'Pacifico', cursive; font-size: 1.4em; text-align: center; color: #28e752;">
+              Orignal Prompt: Two boys are drving go-karts
+            </p>
+            <p style="font-family: 'Pacifico', cursive; font-size: 1.4em; text-align: center; color: #198de5;">
+              Target Prompt: A teddy bear is drving go-kart
+            </p>
           </div>
-          <!-- /item video -->
-
-          <!-- item video -->
           <div class="columns is-mobile is-multiline is-centered">
             <div class="column is-half has-text-centered">
               <p style="font-weight: bold; margin-bottom: 0.5em;">Original</p>
@@ -380,6 +456,14 @@
           <!-- /item video -->
 
           <!-- item video -->
+          <div class="content has-text-justified">
+            <p style="font-family: 'Pacifico', cursive; font-size: 1.4em; text-align: center; color: #28e752;">
+              Orignal Prompt: A man in a safety vest walks towards a helicopter
+            </p>
+            <p style="font-family: 'Pacifico', cursive; font-size: 1.4em; text-align: center; color: #198de5;">
+              Target Prompt: A giant walks towards a airplane
+            </p>
+          </div>
           <div class="columns is-mobile is-multiline is-centered">
             <div class="column is-half has-text-centered">
               <p style="font-weight: bold; margin-bottom: 0.5em;">Original</p>
@@ -391,7 +475,7 @@
             <div class="column is-half has-text-centered">
               <p style="font-weight: bold; margin-bottom: 0.5em;">ConMo</p>
               <video controls muted preload playsinline style="width: 100%; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
-                <source src="./static/videos/application/resize/helicopter/edited_ours2.mp4" type="video/mp4">
+                <source src="./static/videos/application/resize/helicopter/edited_ours.mp4" type="video/mp4">
               </video>
             </div>
           </div>
