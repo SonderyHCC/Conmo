@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="description"
+          content="ConMo: Controllable Motion Disentanglement and Recomposition
+          for Zero-Shot Motion Transfer">
+    <meta name="keywords" content="ConMo, motion transfer, motion disentanglement, zero-shot, CVPR 2025">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ConMo</title>
+  
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+          rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Dancing+Script&family=Shadows+Into+Light&display=swap" rel="stylesheet">
+  
+    <!-- CSS Stylesheets -->
+    <link rel="stylesheet" href="./static/css/bulma.min.css">
+    <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+    <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+    <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+    <link rel="stylesheet" href="./static/css/index.css">
+
+    <!-- Favicon -->
+    <link rel="icon" href="./static/images/conmo_icon.svg">
+  
+    <!-- JS Scripts -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script defer src="./static/js/fontawesome.all.min.js"></script>
+    <script src="./static/js/bulma-carousel.min.js"></script>
+    <script src="./static/js/bulma-slider.min.js"></script>
+    <script src="./static/js/index.js"></script>
+  </head>
+
+  
+<body>
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">ConMo: Controllable Motion Disentanglement and Recomposition
+            for Zero-Shot Motion Transfer</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://openreview.net/profile?id=~Jiayi_Gao1">Jiayi Gao</a><sup>1,2</sup>,</span>
+            <span class="author-block">
+              <a href="https://openreview.net/profile?id=~Zijin_Yin1">Zijin Yin</a><sup>2</sup>,</span>
+            <span class="author-block">
+              <a href="https://openreview.net/profile?id=~Changcheng_Hua1">Changcheng Hua</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://openreview.net/profile?id=~Yuxin_Peng1">Yuxin Peng</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://openreview.net/profile?id=~Kongming_Liang1">Kongming Liang</a><sup>2</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://openreview.net/profile?id=~Zhanyu_Ma1">Zhanyu Ma</a><sup>2</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://openreview.net/profile?id=~Jun_Guo1">Jun Guo</a><sup>2</sup>
+            </span>
+            <span class="author-block">
+              <a href="https://openreview.net/profile?id=~Yang_Liu20">Yang Liu</a><sup>1*</sup>
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>Wangxuan Institute of Computer Technology, Peking University</span>
+            <span class="author-block"><sup>2</sup>Beijing University of Posts and Telecommunications</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="https://arxiv.org/pdf/2504.02451"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/2504.02451"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <!-- Video Link. -->
+              <!-- <span class="link-block">
+                <a href="https://www.youtube.com/watch?v=MrKrnHhk8IA"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Video</span>
+                </a>
+              </span> -->
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com/Andyplus1/ConMo"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+              <!-- Dataset Link. -->
+              <!-- <span class="link-block">
+                <a href="https://pan.baidu.com/share/init?surl=aJbpDKdzQuYGekmELnISqw"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="far fa-images"></i>
+                  </span>
+                  <span>Data</span>
+                  </a> -->
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            The development of Text-to-Video (T2V) generation has made motion transfer possible, enabling the control of video motion based on existing footage. However, current methods have two limitations: 1) struggle to handle multi-subjects videos, failing to transfer specific subject motion; 2) struggle to preserve the diversity and accuracy of motion as transferring to subjects with varying shapes. To overcome these, we introduce ConMo, a training-free framework that disentangle and recompose the motions of subjects and camera movements. ConMo isolates individual subject and background motion cues from complex trajectories in source videos using only subject masks, and reassembles them during target video generation. This approach enables more accurate motion control across diverse subjects and improves performance in multi-subject scenarios. Additionally, we propose soft motion guidance in the recomposition stage which controls the retention of original motion to adjust shape constraints, aiding subject shape adaptation and semantic transformation. Unlike previous methods, ConMo unlocks a wide range of applications, including subject size and position editing, subject removal, semantic modifications, and camera motion simulation. Extensive experiments demonstrate that ConMo significantly outperforms state-of-the-art methods in motion fidelity and temporal consistency.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+
+    <!-- Paper video. -->
+    <!-- <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Video</h2>
+        <div class="publication-video">
+          <iframe src="https://www.youtube.com/embed/MrKrnHhk8IA?rel=0&amp;showinfo=0"
+                  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div> -->
+    <!--/ Paper video. -->
+
+    <!-- Method. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Method Overview</h2>
+
+        <figure class="image" style="margin-bottom: 1.5em; text-align: center;">
+          <img src="./static/images/method.jpg" alt="Method Overview" style="width: 100%; max-width: 1000px;">
+        </figure>
+
+        <div class="content has-text-justified">
+          <p>
+            The method mainly consists of two stages:
+            (a) Reference Video's Motion Disentanglement Stage: We first acquire the masks for each subject in the reference video using SAM2 and video latent features acquire during DDIM inversion. Then, based on the mask, we identify the motion regions of each subject across different frames in the reference video. By calculating the difference of local spatial marginal means of latent features in these regions, we disentangle each subject’s motion. 
+            (b) Motion Recomposition for Target Video Generation Stage: The extracted motion is integrated into the initial noise via the Motion Guidance function and Soft Guidance strategy. This allows generating target videos with consistent motion and adaptive shape handling. The method supports various video editing effects like semantic changes, object removal, position editing, and camera simulation.</p>
+        </div>
+      </div>
+    </div>
+    <!--/ Method. -->
+
+    
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+
+    <div class="columns is-centered">
+
+      
+      
+    <!-- ConMo Results. -->
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">ConMo Results</h2>
+          <h3 class="title is-4">Multi-Subject</h3>
+
+          <!-- item video -->
+          <div class="content has-text-justified">
+            <p style="font-family: 'Pacifico', cursive; font-size: 1.4em; text-align: center; color: #28e752;">
+              Orignal Prompt: Two race cars are driving down a street
+            </p>
+            <p style="font-family: 'Pacifico', cursive; font-size: 1.4em; text-align: center; color: #198de5;">
+              Target Prompt: Two SUVs are driving down a street
+            </p>
+          </div>
+          <div class="columns is-mobile is-multiline is-centered">
+            <div class="column is-one-third has-text-centered">
+              <p style="font-weight: bold; margin-bottom: 0.5em;">Original</p>
+              <video controls muted preload playsinline style="width: 100%; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
+                <source src="./static/videos/multi-subject/ActionAuto/original.mp4" type="video/mp4">
+              </video>
+            </div>
+          
+            <div class="column is-one-third has-text-centered">
+              <p style="font-weight: bold; margin-bottom: 0.5em;">DMT</p>
+              <video controls muted preload playsinline style="width: 100%; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
+                <source src="./static/videos/multi-subject/ActionAuto/edited_dmt.mp4" type="video/mp4">
+              </video>
+            </div>
+          
+            <div class="column is-one-third has-text-centered">
+              <p style="font-weight: bold; margin-bottom: 0.5em;">ConMo</p>
+              <video controls muted preload playsinline style="width: 100%; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
+                <source src="./static/videos/multi-subject/ActionAuto/edited_ours.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div>
+          <!-- /item video -->
+
+          <!-- item video -->
+          <div class="content has-text-justified">
+            <p style="font-family: 'Pacifico', cursive; font-size: 1.4em; text-align: center; color: #28e752;">
+              Orignal Prompt: Two people are running down a street
+            </p>
+            <p style="font-family: 'Pacifico', cursive; font-size: 1.4em; text-align: center; color: #198de5;">
+              Target Prompt: Two robots are running down a street
+            </p>
+          </div>
+          <div class="columns is-mobile is-multiline is-centered">
+            <div class="column is-one-third has-text-centered">
+              <p style="font-weight: bold; margin-bottom: 0.5em;">Original</p>
+              <video controls muted preload playsinline style="width: 100%; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
+                <source src="./static/videos/multi-subject/CoupleRunner/original.mp4" type="video/mp4">
+              </video>
+            </div>
+
+            <div class="column is-one-third has-text-centered">
+              <p style="font-weight: bold; margin-bottom: 0.5em;">DMT</p>
+              <video controls muted preload playsinline style="width: 100%; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
+                <source src="./static/videos/multi-subject/CoupleRunner/edited_dmt.mp4" type="video/mp4">
+              </video>
+            </div>
+
+            <div class="column is-one-third has-text-centered">
+              <p style="font-weight: bold; margin-bottom: 0.5em;">ConMo</p>
+              <video controls muted preload playsinline style="width: 100%; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
+                <source src="./static/videos/multi-subject/CoupleRunner/edited_ours.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div>
+          <!-- /item video -->
+
+          <h3 class="title is-4">Fine-Grained </h3>
+
+          <!-- item video -->
+          <div class="content has-text-justified">
+            <p style="font-family: 'Pacifico', cursive; font-size: 1.4em; text-align: center; color: #28e752;">
+              Orignal Prompt: A woman is walking in the park
+            </p>
+            <p style="font-family: 'Pacifico', cursive; font-size: 1.4em; text-align: center; color: #198de5;">
+              Target Prompt: A boy is walking in the park
+          </div>
+          <div class="columns is-mobile is-multiline is-centered">
+            <div class="column is-one-third has-text-centered">
+              <p style="font-weight: bold; margin-bottom: 0.5em;">Original</p>
+              <video controls muted preload playsinline style="width: 100%; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
+                <source src="./static/videos/fine-grained/lucia/original.mp4" type="video/mp4">
+              </video>
+            </div>
+
+            <div class="column is-one-third has-text-centered">
+              <p style="font-weight: bold; margin-bottom: 0.5em;">DMT</p>
+              <video controls muted preload playsinline style="width: 100%; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
+                <source src="./static/videos/fine-grained/lucia/edited_dmt.mp4" type="video/mp4">
+              </video>
+            </div>
+
+            <div class="column is-one-third has-text-centered">
+              <p style="font-weight: bold; margin-bottom: 0.5em;">ConMo</p>
+              <video controls muted preload playsinline style="width: 100%; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
+                <source src="./static/videos/fine-grained/lucia/edited_ours.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div>
+          <!-- /item video -->
+
+          <!-- item video -->
+          <div class="content has-text-justified">
+            <p style="font-family: 'Pacifico', cursive; font-size: 1.4em; text-align: center; color: #28e752;">
+              Orignal Prompt: A mallard is running on the grass
+            </p>
+            <p style="font-family: 'Pacifico', cursive; font-size: 1.4em; text-align: center; color: #198de5;">
+              Target Prompt: A swan is running on the grass
+          </div>
+          <div class="columns is-mobile is-multiline is-centered">
+            <div class="column is-one-third has-text-centered">
+              <p style="font-weight: bold; margin-bottom: 0.5em;">Original</p>
+              <video controls muted preload playsinline style="width: 100%; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
+                <source src="./static/videos/fine-grained/mallard-fly/original.mp4" type="video/mp4">
+              </video>
+            </div>
+
+            <div class="column is-one-third has-text-centered">
+              <p style="font-weight: bold; margin-bottom: 0.5em;">DMT</p>
+              <video controls muted preload playsinline style="width: 100%; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
+                <source src="./static/videos/fine-grained/mallard-fly/edited_dmt.mp4" type="video/mp4">
+              </video>
+            </div>
+
+            <div class="column is-one-third has-text-centered">
+              <p style="font-weight: bold; margin-bottom: 0.5em;">ConMo</p>
+              <video controls muted preload playsinline style="width: 100%; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
+                <source src="./static/videos/fine-grained/mallard-fly/edited_ours.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div>
+          <!-- /item video -->
+         
+
+          <h3 class="title is-4">Drastic Shape Difference </h3>
+
+          <!-- item video -->
+          <div class="content has-text-justified">
+            <p style="font-family: 'Pacifico', cursive; font-size: 1.4em; text-align: center; color: #28e752;">
+              Orignal Prompt: A plane is flying in the sky
+            </p>
+            <p style="font-family: 'Pacifico', cursive; font-size: 1.4em; text-align: center; color: #198de5;">
+              Target Prompt: A air balloon is flying in the sky
+            </p>
+          </div>
+          <div class="columns is-mobile is-multiline is-centered">
+            <div class="column is-one-third has-text-centered">
+              <p style="font-weight: bold; margin-bottom: 0.5em;">Original</p>
+              <video controls muted preload playsinline style="width: 100%; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
+                <source src="./static/videos/drastic shape difference/airbus/original.mp4" type="video/mp4">
+              </video>
+            </div>
+
+            <div class="column is-one-third has-text-centered">
+              <p style="font-weight: bold; margin-bottom: 0.5em;">DMT</p>
+              <video controls muted preload playsinline style="width: 100%; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
+                <source src="./static/videos/drastic shape difference/airbus/edited_dmt.mp4" type="video/mp4">
+              </video>
+            </div>
+
+            <div class="column is-one-third has-text-centered">
+              <p style="font-weight: bold; margin-bottom: 0.5em;">ConMo</p>
+              <video controls muted preload playsinline style="width: 100%; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
+                <source src="./static/videos/drastic shape difference/airbus/edited_ours.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div>
+          <!-- /item video -->
+
+          <!-- item video -->
+          <div class="content has-text-justified">
+            <p style="font-family: 'Pacifico', cursive; font-size: 1.4em; text-align: center; color: #28e752;">
+              Orignal Prompt: A locomotive is moving through the jungle
+            </p>
+            <p style="font-family: 'Pacifico', cursive; font-size: 1.4em; text-align: center; color: #198de5;">
+              Target Prompt: A man riding bike is moving through the jungle
+            </p>
+          </div>
+          <div class="columns is-mobile is-multiline is-centered">
+            <div class="column is-one-third has-text-centered">
+              <p style="font-weight: bold; margin-bottom: 0.5em;">Original</p>
+              <video controls muted preload playsinline style="width: 100%; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
+                <source src="./static/videos/drastic shape difference/locomotive/original.mp4" type="video/mp4">
+              </video>
+            </div>
+
+            <div class="column is-one-third has-text-centered">
+              <p style="font-weight: bold; margin-bottom: 0.5em;">DMT</p>
+              <video controls muted preload playsinline style="width: 100%; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
+                <source src="./static/videos/drastic shape difference/locomotive/edited_dmt.mp4" type="video/mp4">
+              </video>
+            </div>
+
+            <div class="column is-one-third has-text-centered">
+              <p style="font-weight: bold; margin-bottom: 0.5em;">ConMo</p>
+              <video controls muted preload playsinline style="width: 100%; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
+                <source src="./static/videos/drastic shape difference/locomotive/edited_ours.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div>
+          <!-- /item video -->
+
+          <h3 class="title is-4">Applications: cameramotion、motion-extraction、resize</h3>
+
+          <!-- item video -->
+          <div class="content has-text-justified">
+            <p style="font-family: 'Pacifico', cursive; font-size: 1.4em; text-align: center; color: #28e752;">
+              Orignal Prompt: A car is turning
+            </p>
+            <p style="font-family: 'Pacifico', cursive; font-size: 1.4em; text-align: center; color: #198de5;">
+              Target Prompt: City at night from overlook view
+            </p>
+          </div>
+          <div class="columns is-mobile is-multiline is-centered">
+            <div class="column is-half has-text-centered">
+              <p style="font-weight: bold; margin-bottom: 0.5em;">Original</p>
+              <video controls muted preload playsinline style="width: 100%; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
+                <source src="./static/videos/application/cameramotion/camera_motion_origin.mp4" type="video/mp4">
+              </video>
+            </div>
+
+            <div class="column is-half has-text-centered">
+              <p style="font-weight: bold; margin-bottom: 0.5em;">ConMo</p>
+              <video controls muted preload playsinline style="width: 100%; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
+                <source src="./static/videos/application/cameramotion/camera_motion.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div>
+          <!-- /item video -->
+
+          <!-- item video -->
+          <div class="content has-text-justified">
+            <p style="font-family: 'Pacifico', cursive; font-size: 1.4em; text-align: center; color: #28e752;">
+              Orignal Prompt: Two boys are drving go-karts
+            </p>
+            <p style="font-family: 'Pacifico', cursive; font-size: 1.4em; text-align: center; color: #198de5;">
+              Target Prompt: A teddy bear is drving go-kart
+            </p>
+          </div>
+          <div class="columns is-mobile is-multiline is-centered">
+            <div class="column is-half has-text-centered">
+              <p style="font-weight: bold; margin-bottom: 0.5em;">Original</p>
+              <video controls muted preload playsinline style="width: 100%; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
+                <source src="./static/videos/application/motion extraction/gokart/original.mp4" type="video/mp4">
+              </video>
+            </div>
+
+            <div class="column is-half has-text-centered">
+              <p style="font-weight: bold; margin-bottom: 0.5em;">ConMo</p>
+              <video controls muted preload playsinline style="width: 100%; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
+                <source src="./static/videos/application/motion extraction/gokart/subject_extraction.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div>
+          <!-- /item video -->
+
+          <!-- item video -->
+          <div class="content has-text-justified">
+            <p style="font-family: 'Pacifico', cursive; font-size: 1.4em; text-align: center; color: #28e752;">
+              Orignal Prompt: A man in a safety vest walks towards a helicopter
+            </p>
+            <p style="font-family: 'Pacifico', cursive; font-size: 1.4em; text-align: center; color: #198de5;">
+              Target Prompt: A giant walks towards a airplane
+            </p>
+          </div>
+          <div class="columns is-mobile is-multiline is-centered">
+            <div class="column is-half has-text-centered">
+              <p style="font-weight: bold; margin-bottom: 0.5em;">Original</p>
+              <video controls muted preload playsinline style="width: 100%; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
+                <source src="./static/videos/application/resize/helicopter/original.mp4" type="video/mp4">
+              </video>
+            </div>
+
+            <div class="column is-half has-text-centered">
+              <p style="font-weight: bold; margin-bottom: 0.5em;">ConMo</p>
+              <video controls muted preload playsinline style="width: 100%; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
+                <source src="./static/videos/application/resize/helicopter/edited_ours.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div>
+          <!-- /item video -->
+
+        
+
+      </div>
+    </div>
+    <!--/ ConMo Results. -->
+
+  </div>
+</section>
+
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@article{gao2025conmo,
+      title={ConMo: Controllable Motion Disentanglement and Recomposition for Zero-Shot Motion Transfer},
+      author={Gao, Jiayi and Yin, Zijin and Hua, Changcheng and Peng, Yuxin and Liang, Kongming and Ma, Zhanyu and Guo, Jun and Liu, Yang},
+      journal={arXiv preprint arXiv:2504.02451},
+      year={2025}
+    }</code></pre>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <a class="icon-link"
+         href="./static/videos/nerfies_paper.pdf">
+        <i class="fas fa-file-pdf"></i>
+      </a>
+      <a class="icon-link" href="https://github.com/keunhong" class="external-link" disabled>
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website is licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+          <p>
+            This means you are free to borrow the <a
+              href="https://github.com/nerfies/nerfies.github.io">source code</a> of this website,
+            we just ask that you link back to this page in the footer.
+            Please remember to remove the analytics code included in the header of the website which
+            you do not want on your website.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+
+
+</html>
